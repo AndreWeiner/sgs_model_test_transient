@@ -1,0 +1,16 @@
+output
+data
+__pycache__
+.ipython
+.jupyter
+.local
+.cache
+.ipynb_checkpoints
+.config
+run
+linux64GccDPInt32Opt
+*.o
+*.dep
+lnInclude
+*.so
+.vscode
