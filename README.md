@@ -1,6 +1,11 @@
 # Evaluation of the SGS-model performance in the initial transient stage of the bubble rise
 
 ## TODOs
+- **IH**: Bundle and archive hydrodynamics data once simulations finish
+- **AW**: Properly organise hydrodynamic data for analysis
+- **AW**: Run machine learning simulations on hydrodynamic data
+- **IH**: Start simulations with mass transfer for Sc number of 100
+
 
 ## Overview
 
