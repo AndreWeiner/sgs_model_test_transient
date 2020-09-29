@@ -1,0 +1,27 @@
+#!/bin/sh
+cd ${0%/*} || exit 1                        # Run from this directory
+. $WM_PROJECT_DIR/bin/tools/RunFunctions    # run functions
+
+# mesh creation
+runApplication blockMesh
+runApplication snappyHexMesh -overwrite
+runApplication topoSet -dict system/topoSetDict.extrude
+mv log.topoSet log.topoSet.extrude
+runApplication createPatch -overwrite -dict system/createPatchDict.extrude
+mv log.createPatch log.createPatch.extrude
+runApplication extrudeMesh
+runApplication collapseEdges -overwrite -collapseFaces
+runApplication createPatch -overwrite -dict system/createPatchDict.rename
+mv log.createPatch log.createPatch.rename
+
+# run simulation
+cp 0.org/* 0/
+cp /home/output/rise_vel_CB2.ts .
+cp /home/output/rad_CB2.ts .
+cp /home/output/tv_CB2.ts .
+runApplication $(getApplication)
+
+# dummy file for post processing with paraview
+touch post.foam
+
+#------------------------------------------------------------------------------
