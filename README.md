@@ -1,11 +1,5 @@
 # Evaluation of the SGS-model performance in the initial transient stage of the bubble rise
 
-## TODOs
-- **IH**: Bundle and archive hydrodynamics data once simulations finish
-- **AW**: Properly organise hydrodynamic data for analysis
-- **AW**: Run machine learning simulations on hydrodynamic data
-- **IH**: Start simulations with mass transfer for Sc number of 100
-
 
 ## Overview
 
@@ -73,6 +67,45 @@ Once the container has been created successfully, the environment can be accesse
 ./start_notebooks.sh
 ```
 A url with the syntax [http://127.0.0.1:8000/?token=...]() will be displayed in the console. By opening the url in a web browser of your choice, the Jupyter notebooks can be accessed and executed.
+
+### Running OpenFOAM simulations
+
+The environment containing OpenFOAM and PyTorch can be created and used similar to the Jupyterlab environment. To create the environment, run:
+
+```
+./create_openfoam_container.sh
+```
+To access the environment, run:
+```
+./start_openfoam.sh
+```
+Assuming that all boundary conditions and apps have been compiled, a typical workflow would look as follows:
+
+```
+./start_openfoam.sh
+# now we are inside the container
+cd openfoam
+# the run folder is not tracked by Git
+mkdir run
+cp -r test_cases/CB4_ref_0 run/
+cd run/CB4_ref_0/
+# runs pre-processing and the simulation itself
+./Allrun
+# once the simulation is done, we can compute local and global Sherwood numbers;
+# unfortunately, a vast amount of warning messages due to the wedge mesh will be displayed;
+# therefore, it is best to redirect all output
+calcSh -patch bubble -field s1 &> /dev/null
+```
+
+### Compiling boundary conditions and apps
+
+The compilation of boundary conditions and apps always follows the same pattern. E.g., to compile the *calcSh* utility, run:
+
+```
+./start_openfoam.sh
+cd openfoam/apps/calcSh/
+wmake
+```
 
 ## Licence
 
