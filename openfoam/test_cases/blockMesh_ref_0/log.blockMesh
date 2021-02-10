@@ -1,0 +1,219 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2012                                  |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 79e353b8-20201222 OPENFOAM=2012
+Arch   : "LSB;label=32;scalar=64"
+Exec   : blockMesh
+Date   : Feb 01 2021
+Time   : 15:16:47
+Host   : andre-XP1511
+PID    : 324631
+I/O    : uncollated
+Case   : /home/andre/Development/sgs_model_test_transient/openfoam/test_cases/blockMesh_ref_0
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Creating block mesh from "system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 12
+		Number of boundary faces : 36
+		Number of defined boundary faces : 36
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list (geometric search)...
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 1
+    Block 0 cell size :
+        i : 0.0047268753 .. 0.023634376
+        j : 0.13365041 .. 0.026730082
+        k : 0 .. 0
+
+    Block 1 cell size :
+        i : 0.0052499045 .. 0.0262488
+        j : 0.024625306 .. 0.00049250612
+        k : 0 .. 0
+
+    Block 2 cell size :
+        i : 0.027192987 .. 0.013596808
+        j : 0.024629527 .. 0.00049259054
+        k : 0.037032483 .. 0.037032483
+
+    Block 3 cell size :
+        i : 0.013596808 .. 0.027192987
+        j : 0.024633748 .. 0.00049267495
+        k : 0.052371842 .. 0.052371842
+
+    Block 4 cell size :
+        i : 0.0262488 .. 0.0052499045
+        j : 0.024629527 .. 0.00049259054
+        k : 0.037032483 .. 0.037032483
+
+    Block 5 cell size :
+        i : 0.023634376 .. 0.0047268753
+        j : 0.14343673 .. 0.028687347
+        k : 0.037032483 .. 0.037032483
+
+    Block 6 cell size :
+        i : 0.14343673 .. 0.028687347
+        j : 0.53776879 .. 0.053776879
+        k : 0.26185922 .. 0.26185922
+
+    Block 7 cell size :
+        i : 0.024481515 .. 0.012240757
+        j : 0.53776879 .. 0.053776879
+        k : 0.26185922 .. 0.26185922
+
+    Block 8 cell size :
+        i : 0.012240757 .. 0.024481515
+        j : 0.50107819 .. 0.050107819
+        k : 0.26185922 .. 0.26185922
+
+    Block 9 cell size :
+        i : 0.028687347 .. 0.14343673
+        j : 0.53776879 .. 0.053776879
+        k : 0.26185922 .. 0.26185922
+
+--> FOAM Warning : 
+    From virtual void Foam::wedgePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/wedge/wedgePolyPatch.C at line 72
+    Wedge patch 'wedge_back' is not planar.
+At local face at (1.1125869 -0.69714281 -0.029134111) the normal (-0.026176949 -3.1874377e-08 -0.99965732) differs from the average normal (-0.026176949 2.8038515e-18 -0.99965732) by 1.0159775e-15
+Either correct the patch or split it into planar parts
+--> FOAM Warning : 
+    From virtual void Foam::wedgePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/wedge/wedgePolyPatch.C at line 72
+    Wedge patch 'wedge_back' is not planar.
+At local face at (1.0198669 -0.6971969 -0.026706154) the normal (-0.026176949 -3.2812958e-08 -0.99965732) differs from the average normal (-0.026176949 2.8038515e-18 -0.99965732) by 1.0766918e-15
+Either correct the patch or split it into planar parts
+--> FOAM Warning : 
+    From virtual void Foam::wedgePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/wedge/wedgePolyPatch.C at line 72
+    Wedge patch 'wedge_back' is not planar.
+At local face at (0.93773037 -0.69724481 -0.024555332) the normal (-0.026176949 -3.3653031e-08 -0.99965732) differs from the average normal (-0.026176949 2.8038515e-18 -0.99965732) by 1.1325281e-15
+Either correct the patch or split it into planar parts
+--> FOAM Warning : 
+    From virtual void Foam::wedgePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/wedge/wedgePolyPatch.C at line 72
+    Wedge patch 'wedge_back' is not planar.
+At local face at (0.86496906 -0.69728726 -0.02265001) the normal (-0.026176949 -3.4404084e-08 -0.99965732) differs from the average normal (-0.026176949 2.8038515e-18 -0.99965732) by 1.1836426e-15
+Either correct the patch or split it into planar parts
+--> FOAM Warning : 
+    From virtual void Foam::wedgePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/wedge/wedgePolyPatch.C at line 72
+    Wedge patch 'wedge_back' is not planar.
+At local face at (0.80051282 -0.69732486 -0.020962164) the normal (-0.026176949 -3.5074871e-08 -0.99965732) differs from the average normal (-0.026176949 2.8038515e-18 -0.99965732) by 1.2302482e-15
+Either correct the patch or split it into planar parts
+--> FOAM Warning : 
+    From virtual void Foam::wedgePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/wedge/wedgePolyPatch.C at line 72
+    Wedge patch 'wedge_back' is not planar.
+At local face at (0.74341366 -0.69735817 -0.01946697) the normal (-0.026176949 -3.5673429e-08 -0.99965732) differs from the average normal (-0.026176949 2.8038515e-18 -0.99965732) by 1.2725952e-15
+Either correct the patch or split it into planar parts
+--> FOAM Warning : 
+    From virtual void Foam::wedgePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/wedge/wedgePolyPatch.C at line 72
+    Wedge patch 'wedge_back' is not planar.
+At local face at (0.81868287 -0.67767206 -0.021437964) the normal (-0.026176949 -3.2163007e-08 -0.99965732) differs from the average normal (-0.026176949 2.8038515e-18 -0.99965732) by 1.034513e-15
+Either correct the patch or split it into planar parts
+--> FOAM Warning : 
+    From virtual void Foam::wedgePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/wedge/wedgePolyPatch.C at line 72
+    Wedge patch 'wedge_back' is not planar.
+At local face at (0.76183125 -0.6777681 -0.019949252) the normal (-0.026176949 -3.2698659e-08 -0.99965732) differs from the average normal (-0.026176949 2.8038515e-18 -0.99965732) by 1.0692567e-15
+Either correct the patch or split it into planar parts
+--> FOAM Warning : 
+    From virtual void Foam::wedgePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/wedge/wedgePolyPatch.C at line 72
+    Wedge patch 'wedge_back' is not planar.
+At local face at (0.81868287 0.67767206 -0.021437964) the normal (-0.026176949 3.2163007e-08 -0.99965732) differs from the average normal (-0.026176949 2.8038515e-18 -0.99965732) by 1.034513e-15
+Either correct the patch or split it into planar parts
+--> FOAM Warning : 
+    From virtual void Foam::wedgePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/wedge/wedgePolyPatch.C at line 72
+    Wedge patch 'wedge_back' is not planar.
+At local face at (0.76183125 0.6777681 -0.019949252) the normal (-0.026176949 3.2698659e-08 -0.99965732) differs from the average normal (-0.026176949 2.8038515e-18 -0.99965732) by 1.0692567e-15
+Either correct the patch or split it into planar parts
+--> FOAM Warning : 
+    From virtual void Foam::wedgePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/wedge/wedgePolyPatch.C at line 72
+    Wedge patch 'wedge_back' is not planar.
+At local face at (1.1125869 0.69714281 -0.029134111) the normal (-0.026176949 3.1874377e-08 -0.99965732) differs from the average normal (-0.026176949 2.8038515e-18 -0.99965732) by 1.0159774e-15
+Either correct the patch or split it into planar parts
+--> FOAM Warning : 
+    From virtual void Foam::wedgePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/wedge/wedgePolyPatch.C at line 72
+    Wedge patch 'wedge_back' is not planar.
+At local face at (1.0198669 0.6971969 -0.026706154) the normal (-0.026176949 3.2812958e-08 -0.99965732) differs from the average normal (-0.026176949 2.8038515e-18 -0.99965732) by 1.0766918e-15
+Either correct the patch or split it into planar parts
+--> FOAM Warning : 
+    From virtual void Foam::wedgePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/wedge/wedgePolyPatch.C at line 72
+    Wedge patch 'wedge_back' is not planar.
+At local face at (0.93773037 0.69724481 -0.024555332) the normal (-0.026176949 3.3653031e-08 -0.99965732) differs from the average normal (-0.026176949 2.8038515e-18 -0.99965732) by 1.1325281e-15
+Either correct the patch or split it into planar parts
+--> FOAM Warning : 
+    From virtual void Foam::wedgePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/wedge/wedgePolyPatch.C at line 72
+    Wedge patch 'wedge_back' is not planar.
+At local face at (0.86496906 0.69728726 -0.02265001) the normal (-0.026176949 3.4404083e-08 -0.99965732) differs from the average normal (-0.026176949 2.8038515e-18 -0.99965732) by 1.1836426e-15
+Either correct the patch or split it into planar parts
+--> FOAM Warning : 
+    From virtual void Foam::wedgePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/wedge/wedgePolyPatch.C at line 72
+    Wedge patch 'wedge_back' is not planar.
+At local face at (0.80051282 0.69732486 -0.020962164) the normal (-0.026176949 3.507487e-08 -0.99965732) differs from the average normal (-0.026176949 2.8038515e-18 -0.99965732) by 1.2302482e-15
+Either correct the patch or split it into planar parts
+--> FOAM Warning : 
+    From virtual void Foam::wedgePolyPatch::calcGeometry(Foam::PstreamBuffers&)
+    in file meshes/polyMesh/polyPatches/constraint/wedge/wedgePolyPatch.C at line 72
+    Wedge patch 'wedge_back' is not planar.
+At local face at (0.74341366 0.69735817 -0.01946697) the normal (-0.026176949 3.5673428e-08 -0.99965732) differs from the average normal (-0.026176949 2.8038515e-18 -0.99965732) by 1.2725952e-15
+Either correct the patch or split it into planar parts
+
+There are no merge patch pairs
+
+Writing polyMesh with 0 cellZones
+----------------
+Mesh Information
+----------------
+  boundingBox: (0 -5 -0.13092961) (5 5 0.13092961)
+  nPoints: 54960
+  nCells: 27200
+  nFaces: 108940
+  nInternalFaces: 53980
+----------------
+Patches
+----------------
+  patch 0 (start: 53980 size: 27200) name: wedge_back
+  patch 1 (start: 81180 size: 27200) name: wedge_front
+  patch 2 (start: 108380 size: 200) name: bubble
+  patch 3 (start: 108580 size: 80) name: inlet
+  patch 4 (start: 108660 size: 200) name: side
+  patch 5 (start: 108860 size: 80) name: outlet
+  patch 6 (start: 108940 size: 0) name: axis
+
+End
+

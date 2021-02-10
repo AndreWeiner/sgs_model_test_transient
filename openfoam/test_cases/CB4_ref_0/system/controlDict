@@ -30,7 +30,7 @@ stopAt          endTime;
 
 endTime         10;
 
-deltaT          5e-4;
+deltaT          1.0e-4;
 
 writeControl    adjustable;
 
@@ -40,7 +40,7 @@ purgeWrite      0;
 
 writeFormat     binary;
 
-writePrecision  8;
+writePrecision  15;
 
 timeFormat      general;
 
@@ -53,49 +53,10 @@ adjustTimeStep  yes;
 maxCo           1.0;
 
 maxDeltaT       1.0e-3;
-/*
+
 functions
 {
-    sTransport100
-    {
-        type            scalarTransport;
-        libs            ("libsolverFunctionObjects.so");
-        enabled         true;
-        writeControl    outputTime;
-        writeInterval   1;
-        field           s1;
-        write           true;
-        D 4.19665e-5;   //Sc = nu/D = 100
-        resetOnStartUp  false;
-        fvOptions{}
-    }
-    sTransport1000
-    {
-        type            scalarTransport;
-        libs            ("libsolverFunctionObjects.so");
-        enabled         true;
-        writeControl    outputTime;
-        writeInterval   1;
-        field           s2;
-        write           true;
-        D 4.19665e-6;   //Sc = nu/D = 1000
-        resetOnStartUp  false;
-        fvOptions{}
-    }
-    sTransport10000
-    {
-        type            scalarTransport;
-        libs            ("libsolverFunctionObjects.so");
-        enabled         true;
-        writeControl    outputTime;
-        writeInterval   1;
-        field           s3;
-        write           true;
-        D 4.19665e-7;   //Sc = nu/D = 10000
-        resetOnStartUp  false;
-        fvOptions{}
-    }
+    #include "limitFields"
 }
 
-*/
 // ************************************************************************* //

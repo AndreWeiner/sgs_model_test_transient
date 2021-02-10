@@ -35,7 +35,7 @@ divSchemes
     default         none;
     div(phi,U)      Gauss linearUpwind limited;
     div((nuEff*dev2(T(grad(U))))) Gauss linear;
-    div(phi,s1)      Gauss linearUpwind limited;//limitedLinear 01;
+    div(phi,s1)      Gauss linearUpwind limited;
     div(phi,s2)      Gauss linearUpwind limited;
     div(phi,s3)      Gauss linearUpwind limited;
 }

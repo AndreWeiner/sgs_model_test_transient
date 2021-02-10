@@ -1,0 +1,22 @@
+#!/bin/sh
+cd ${0%/*} || exit 1                        # Run from this directory
+. $WM_PROJECT_DIR/bin/tools/RunFunctions    # run functions
+
+# copy mesh
+cp -r /home/openfoam/run/blockMesh_ref_1/constant/polyMesh constant/
+
+# run simulation
+cp -r 0.org 0
+ln -s /home/output/rise_vel_CB2.ts .
+ln -s /home/output/rad_CB2.ts .
+ln -s /home/output/tv_CB2.ts .
+runApplication $(getApplication)
+
+# post processing
+postProcess -func singleGraph
+calcSh -patch bubble -field s1 &> /dev/null
+calcSh -patch bubble -field s2 &> /dev/null
+calcSh -patch bubble -field s3 &> /dev/null
+touch post.foam
+
+#------------------------------------------------------------------------------

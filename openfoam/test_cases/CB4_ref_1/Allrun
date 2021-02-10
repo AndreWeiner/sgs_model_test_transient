@@ -2,26 +2,21 @@
 cd ${0%/*} || exit 1                        # Run from this directory
 . $WM_PROJECT_DIR/bin/tools/RunFunctions    # run functions
 
-# mesh creation
-runApplication blockMesh
-runApplication snappyHexMesh -overwrite
-runApplication topoSet -dict system/topoSetDict.extrude
-mv log.topoSet log.topoSet.extrude
-runApplication createPatch -overwrite -dict system/createPatchDict.extrude
-mv log.createPatch log.createPatch.extrude
-runApplication extrudeMesh
-runApplication collapseEdges -overwrite -collapseFaces
-runApplication createPatch -overwrite -dict system/createPatchDict.rename
-mv log.createPatch log.createPatch.rename
+# copy mesh
+cp -r /home/openfoam/run/blockMesh_ref_1/constant/polyMesh constant/
 
 # run simulation
-cp 0.org/* 0/
-cp /home/output/rise_vel_CB4.ts .
-cp /home/output/rad_CB4.ts .
-cp /home/output/tv_CB4.ts .
+cp -r 0.org 0
+ln -s /home/output/rise_vel_CB4.ts .
+ln -s /home/output/rad_CB4.ts .
+ln -s /home/output/tv_CB4.ts .
 runApplication $(getApplication)
 
-# dummy file for post processing with paraview
+# post processing
+postProcess -func singleGraph
+calcSh -patch bubble -field s1 &> /dev/null
+calcSh -patch bubble -field s2 &> /dev/null
+calcSh -patch bubble -field s3 &> /dev/null
 touch post.foam
 
 #------------------------------------------------------------------------------

@@ -30,7 +30,7 @@ stopAt          endTime;
 
 endTime         10;
 
-deltaT          1e-4;
+deltaT          1.0e-4;
 
 writeControl    adjustable;
 
@@ -40,7 +40,7 @@ purgeWrite      0;
 
 writeFormat     binary;
 
-writePrecision  8;
+writePrecision  15;
 
 timeFormat      general;
 
@@ -52,7 +52,11 @@ adjustTimeStep  yes;
 
 maxCo           1.0;
 
-maxDeltaT       5.0e-4;
+maxDeltaT       4.0e-4;
 
+functions
+{
+    #include "limitFields"
+}
 
 // ************************************************************************* //

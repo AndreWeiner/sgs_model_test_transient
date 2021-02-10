@@ -1,0 +1,13 @@
+limitFields
+{
+    // Mandatory entries (unmodifiable)
+    type            limitFields;
+    libs            (fieldFunctionObjects);
+
+    // Mandatory entries (runtime modifiable)
+    fields          (s1 s2 s3);
+    limit           max;
+    max             1;
+    writeControl    writeTime;
+    writeInterval   1;
+}
