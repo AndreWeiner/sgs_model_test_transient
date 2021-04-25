@@ -137,3 +137,63 @@ class SimpleMLP(torch.nn.Module):
     def model_parameters(self):
         """Compute total number of trainable model parameters."""
         return sum(p.numel() for p in self.parameters() if p.requires_grad)
+    
+    
+def compute_sh_sector_average(data, n_sectors=90):
+    """Compute sector averages for local Sherwood number.
+    
+    TODO: clean up implementation
+    
+    Parameters
+    ----------
+    data - DataFrame: interface data of hybrid simulations
+    n_sector - Integer: number of sectors
+    
+    Returns
+    -------
+    sector-averaged quantities for radius, x, theta, sh_loc
+    
+    """
+    sector_width = np.pi / n_sectors
+    sector_ubounds = np.arange(sector_width, np.pi + 0.1 * sector_width, sector_width)
+    theta = data.theta.values
+    sort_ind = theta.argsort()
+    sh = data.sh.values[sort_ind]
+    area = data.area.values[sort_ind]
+    x = data.x.values[sort_ind]
+    rad = np.sqrt(np.square(data.x.values) + np.square(data.y.values))
+    rad = rad[sort_ind]
+    theta = theta[sort_ind]
+    current_sector = 0
+    area_sum = 0.0
+    sh_sum = 0.0
+    theta_sum = 0.0
+    x_sum = 0.0
+    rad_sum = 0.0
+    sh_sec = np.zeros(n_sectors)
+    theta_sec = np.zeros(n_sectors)
+    x_sec = np.zeros(n_sectors)
+    rad_sec = np.zeros(n_sectors)
+    for i, t in enumerate(theta):
+        if t <= sector_ubounds[current_sector]:
+            sh_sum += sh[i] * area[i]
+            theta_sum += theta[i] * area[i]
+            x_sum += x[i] * area[i]
+            rad_sum += rad[i] * area[i]
+            area_sum += area[i] 
+        else:
+            sh_sec[current_sector] = sh_sum / area_sum
+            theta_sec[current_sector] = theta_sum / area_sum
+            x_sec[current_sector] = x_sum / area_sum
+            rad_sec[current_sector] = rad_sum / area_sum
+            area_sum = area[i]
+            sh_sum = sh[i] * area[i]
+            theta_sum = theta[i] * area[i]
+            x_sum = x[i] * area[i]
+            rad_sum = rad[i] * area[i]
+            current_sector += 1
+    sh_sec[current_sector] = sh_sum / area_sum
+    theta_sec[current_sector] = theta_sum / area_sum
+    x_sec[current_sector] = x_sum / area_sum
+    rad_sec[current_sector] = rad_sum / area_sum
+    return rad_sec, x_sec, theta_sec, sh_sec
