@@ -14,11 +14,11 @@ TODO: link preprint and article
 
 The repository contains mostly software related to the *hybrid simulation approach*. In the hybrid approach, single-phase flow and species transport simulations are computed. Interface deformation, interface velocity, and rise velocity are mapped from the two-phase to the single-phase simulations using machine learning.
 
-[![All cases Sc 100](https://img.youtube.com/vi/qhxbkvM2jAI/0.jpg)](https://www.youtube.com/qhxbkvM2jAI)
+[![All cases Sc 100](https://img.youtube.com/vi/qhxbkvM2jAI/0.jpg)](https://www.youtube.com/watch?v=qhxbkvM2jAI)
 
 The mesh is surface aligned and deforms according to the interface deformation computed in the two-phase simulations. In contrast to the video below, the final meshes used for all computations reported in the article were created with *blockMesh*.
 
-[![All cases Sc 100](https://img.youtube.com/vi/ytD2Qs3fCxk/0.jpg)](https://www.youtube.com/ytD2Qs3fCxk)
+[![All cases Sc 100](https://img.youtube.com/vi/ytD2Qs3fCxk/0.jpg)](https://www.youtube.com/watch?v=ytD2Qs3fCxk)
 
 The repository is organized as follows:
 
