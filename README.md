@@ -12,13 +12,13 @@ This project is a collaborative effort between the [Multi-Scale Modeling of Mult
 
 TODO: link preprint and article
 
-The repository contains mostly software related to the *hybrid simulation approach*. In the hybrid approach, single-phase flow and species transport simulations are computed. Interface deformation, interface velocity, and rise velocity are mapped from the two-phase to the single-phase simulations using machine learning.
+The repository contains mostly software related to the *hybrid simulation approach*. In the hybrid approach, single-phase flow and species transport equations are solved. Interface deformation, interface velocity, and rise velocity are mapped from the two-phase to the single-phase simulations using machine learning.
 
 [![All cases Sc 100](https://img.youtube.com/vi/qhxbkvM2jAI/0.jpg)](https://www.youtube.com/watch?v=qhxbkvM2jAI)
 
 The mesh is surface aligned and deforms according to the interface deformation computed in the two-phase simulations. In contrast to the video below, the final meshes used for all computations reported in the article were created with *blockMesh*.
 
-[![All cases Sc 100](https://img.youtube.com/vi/ytD2Qs3fCxk/0.jpg)](https://www.youtube.com/watch?v=ytD2Qs3fCxk)
+[![Mesh deformation](https://img.youtube.com/vi/ytD2Qs3fCxk/0.jpg)](https://www.youtube.com/watch?v=ytD2Qs3fCxk)
 
 The repository is organized as follows:
 
@@ -120,6 +120,9 @@ To start an interactive shell, run:
 ```
 ./start_openfoam.sh
 ```
+
+### Performing simulations
+
 There are scripts in the *openfoam* folder to compile all applications and to run all test cases contained in the accompanying article. To reproduce the entire simulation data, run (assuming that the machine learning models are available in the *output* folder):
 ```
 ./start_openfoam
