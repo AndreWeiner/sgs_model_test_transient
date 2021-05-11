@@ -36,9 +36,9 @@ The repository is organized as follows:
 
 Raw simulation data, binary files, and visualizations are not stored on Github but have to be downloaded and extracted separately. If the data is not available via the links, please open an issue.
 
-- *data* folder: [link](https://cloudstorage.tu-braunschweig.de/getlink/fiJfFmo9H2M72ENvWXPgRt2J/data.tar.gz)
-- *output* folder: [link](https://cloudstorage.tu-braunschweig.de/getlink/fiM8N7wSfWVzpvnxVwctDpr1/output.tar.gz)
-- *openfoam/run* folder: [link](https://cloudstorage.tu-braunschweig.de/getlink/fi4F1PpKkMJUDWHxEBU4JqcU/run.tar.gz)
+- *data* folder (~6.1GB): [link](https://cloudstorage.tu-braunschweig.de/getlink/fiJfFmo9H2M72ENvWXPgRt2J/data.tar.gz)
+- *output* folder (~52MB): [link](https://cloudstorage.tu-braunschweig.de/getlink/fiM8N7wSfWVzpvnxVwctDpr1/output.tar.gz)
+- *openfoam/run* folder (~2.7GB): [link](https://cloudstorage.tu-braunschweig.de/getlink/fi4F1PpKkMJUDWHxEBU4JqcU/run.tar.gz)
 
 Assuming that the *tar.gz* archives are located at the repository's top level, the data can be extracted as follows:
 ```
