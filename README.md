@@ -1,4 +1,4 @@
-# Evaluation of the SGS-model performance in the initial transient stage of the bubble rise
+# Evaluation of the SGS model performance in the initial transient stage of the bubble rise
 
 
 ## Overview
@@ -77,11 +77,11 @@ If the *data* and *output* folder were downloaded and extracted as described abo
 - **data_processing.ipynb**: read and process raw log files and interface data coming from the two-phase simulations; computation of velocity projection; quick visualization of unprocessed data
 - **model_creation.ipynb**: creation of machine learning models
 - **export_models.ipynb**: export of machine learning models to TorchScript
-- **sherwood_numbers.ipynb**: evaluation of Sherwood numbers; must figures reported in the article are created here
+- **sherwood_numbers.ipynb**: evaluation of Sherwood numbers; most figures reported in the article are created here
 
 ### Displaying the notebooks online
 
-Static versions of the notebooks can rendered online without the need to download or install any dependencies. The rendering on Github often does not work properly for large notebooks. [NBViewer](https://nbviewer.jupyter.org/) is typically the better choice:
+Static versions of the notebooks can be rendered online without the need to download or install any dependencies. The rendering on Github often does not work properly for large notebooks. [NBViewer](https://nbviewer.jupyter.org/) is typically the better choice:
 
 - [data_processing.ipynb](https://nbviewer.jupyter.org/github/AndreWeiner/sgs_model_test_transient/blob/master/notebooks/data_processing.ipynb)
 - [model_creation.ipynb](https://nbviewer.jupyter.org/github/AndreWeiner/sgs_model_test_transient/blob/master/notebooks/model_creation.ipynb)
@@ -111,7 +111,7 @@ A url with the syntax [http://127.0.0.1:8000/?token=...]() will be displayed in 
 
 ### Creating the environment
 
-The environment containing OpenFOAM and PyTorch can be created and used similar to the Jupyterlab environment. To create the environment, run:
+The environment containing OpenFOAM and PyTorch can be created and used similarly to the Jupyterlab environment. To create the environment, run:
 
 ```
 ./create_openfoam_container.sh
