@@ -1,7 +1,7 @@
 # Evaluation of the SGS model performance in the initial transient stage of the bubble rise
 
 
-## Overview
+## Introduction
 
 This repository contains source code and documentation related to the research project
 
@@ -11,6 +11,12 @@ Assessment of a subgrid-scale model for convection-dominated mass transfer at ri
 This project is a collaborative effort between the [Multi-Scale Modeling of Multi-Phase Flows](https://www.tue.nl/en/research/research-groups/multi-scale-modelling-of-multi-phase-flows/) group at TU Eindhoven and the [Institute of Fluid Mechanics](https://www.tu-braunschweig.de/ism) at TU Braunschweig. The research project has been planned and conducted by **Irian Hierck**, **Claire Claassen**, **Maike Balthussen**, all TU Eindhoven, and **Andre Weiner**, TU Braunschweig.
 
 TODO: link preprint and article
+
+## Acknowledgement
+
+This work is part of the research program **First principles based multi-scale modeling of transport in reactive three phase flows** with project number 716.014.001, which is financed by the Netherlands Organization for Scientific Research (NWO) TOP grant. This work is also part of the research program **Reactive Gas-Liquid Two-Phase Flow in Porous Media**, with project number 716.018.001, which is financed by the Netherlands Organization for Scientific Research (NWO) TOP grant.
+
+## Repository overview
 
 The repository contains mostly software related to the *hybrid simulation approach*. In the hybrid approach, single-phase flow and species transport equations are solved. Interface deformation, interface velocity, and rise velocity are mapped from the two-phase to the single-phase simulations using machine learning.
 
