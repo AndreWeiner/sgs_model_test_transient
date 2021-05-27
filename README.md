@@ -8,7 +8,7 @@ This repository contains source code and documentation related to the research p
 ```
 Assessment of a subgrid-scale model for convection-dominated mass transfer at rising bubbles during the initial transient rise
 ```
-This project is a collaborative effort between the [Multi-Scale Modeling of Multi-Phase Flows](https://www.tue.nl/en/research/research-groups/multi-scale-modelling-of-multi-phase-flows/) group at TU Eindhoven and the [Institute of Fluid Mechanics](https://www.tu-braunschweig.de/ism) at TU Braunschweig. The research project has been planned and conducted by **Irian Hierck**, **Claire Claassen**, **Maike Balthussen**, all TU Eindhoven, and **Andre Weiner**, TU Braunschweig.
+This project is a collaborative effort between the [Multi-Scale Modeling of Multi-Phase Flows](https://www.tue.nl/en/research/research-groups/multi-scale-modelling-of-multi-phase-flows/) group at TU Eindhoven and the [Institute of Fluid Mechanics](https://www.tu-braunschweig.de/ism) at TU Braunschweig. The research project was planned and executed by **Irian Hierck**, **Claire Claassen**, **Hans Kuipers**, **Maike Balthussen**, all TU Eindhoven, and **Andre Weiner**, TU Braunschweig.
 
 TODO: link preprint and article
 
