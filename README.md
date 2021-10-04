@@ -10,7 +10,12 @@ Assessment of a subgrid-scale model for convection-dominated mass transfer at ri
 ```
 This project is a collaborative effort between the [Multi-Scale Modeling of Multi-Phase Flows](https://www.tue.nl/en/research/research-groups/multi-scale-modelling-of-multi-phase-flows/) group at TU Eindhoven and the [Institute of Fluid Mechanics](https://www.tu-braunschweig.de/ism) at TU Braunschweig. The research project was planned and executed by **Irian Hierck**, **Claire Claassen**, **Hans Kuipers**, **Maike Balthussen**, all TU Eindhoven, and **Andre Weiner**, TU Braunschweig.
 
-TODO: link preprint and article
+Cite as:
+```
+Andre Weiner, Claire Claassen, Irian Hierck, et al. Assessment of a subgrid-scale model for convection-dominated mass transfer for initial transient rise of a bubble. Authorea. September 25, 2021.
+
+DOI: 10.22541/au.163253713.32891661/v1
+```
 
 ## Acknowledgement
 
