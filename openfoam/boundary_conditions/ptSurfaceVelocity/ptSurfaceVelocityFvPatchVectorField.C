@@ -31,6 +31,7 @@ License
 #include "surfaceFields.H"
 #include "Time.H"
 #include "polyMesh.H"
+#include "fvcMeshPhi.H"
 
 // * * * * * * * * * * * * * * * * Constructors  * * * * * * * * * * * * * * //
 
@@ -61,9 +62,9 @@ ptSurfaceVelocityFvPatchVectorField
     origin_(dict.lookup("origin")),
     axis_(dict.lookup("axis")),
     normal_(dict.lookup("normal")),
-    model_name_(dict.lookup("modelName"))
+    model_name_(dict.get<word>("modelName")),
+    velocity_model_(torch::jit::load(model_name_))
 {
-    velocity_model_ = torch::jit::load(model_name_);
     if (!dict.found("value"))
     {
       updateCoeffs();
@@ -154,10 +155,23 @@ void Foam::ptSurfaceVelocityFvPatchVectorField::updateCoeffs()
     torch::Tensor uTensor = velocity_model_.forward(modelFeatures).toTensor();
     auto uAccessor = uTensor.accessor<double,1>();
 
+    // comute normal velocity from mesh motion
+    const fvMesh& mesh = internalField().mesh();
+    const pointField& oldPoints = mesh.oldPoints();
+    const polyPatch& pp = patch().patch();
+    vectorField oldFc(pp.size());
+    forAll(oldFc, i)
+    {
+        oldFc[i] = pp[i].centre(oldPoints);
+    }
+    const scalar deltaT = mesh.time().deltaT0Value();
+    const vectorField Up((pp.faceCentres() - oldFc)/deltaT);
+
+    // add tangential and normal components
     vectorField surfaceVelocity(Cf.size(), Zero);
     forAll(surfaceVelocity, faceI)
     {
-	    surfaceVelocity[faceI] = tau[faceI] * uAccessor[faceI];
+	    surfaceVelocity[faceI] = tau[faceI] * uAccessor[faceI] + n[faceI]*(Up[faceI] & n[faceI]);
     }
 
     vectorField::operator=(surfaceVelocity);
@@ -171,7 +185,7 @@ void Foam::ptSurfaceVelocityFvPatchVectorField::write(Ostream& os) const
     os.writeEntry("origin", origin_);
     os.writeEntry("axis", axis_);
     os.writeEntry("normal", normal_);
-    os.writeEntry("modelName", model_name_);
+    os.writeEntry<word>("modelName", model_name_);
     writeEntry("value", os);
 }
 

@@ -67,7 +67,7 @@ ptDisplacementPointPatchVectorField
     direction_(dict.lookup("direction")),
     normal_(dict.lookup("normal")),
     radius_(dict.lookupOrDefault<scalar>("radius", 0.0)),
-    model_name_(dict.lookup("modelName")),
+    model_name_(dict.get<word>("modelName")),
     shape_model_(torch::jit::load(model_name_))
 {
     if (!dict.found("value"))
@@ -162,7 +162,7 @@ void ptDisplacementPointPatchVectorField::write(Ostream& os) const
     os.writeEntry("direction", direction_);
     os.writeEntry("normal", normal_);
     os.writeEntry("radius", radius_);
-    os.writeEntry("modelName", model_name_);
+    os.writeEntry<word>("modelName", model_name_);
     writeEntry("value", os);
 }
 

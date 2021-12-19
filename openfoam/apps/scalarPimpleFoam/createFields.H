@@ -55,7 +55,6 @@ volScalarField p
 );
 
 Info<< "Reading field U\n" << endl;
-Info << "test statement\n";
 volVectorField U
 (
     IOobject

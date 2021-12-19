@@ -44,7 +44,6 @@ ptInletVelocityFvPatchVectorField
     model_name_("")
 {}
 
-
 Foam::ptInletVelocityFvPatchVectorField::
 ptInletVelocityFvPatchVectorField
 (
@@ -55,9 +54,9 @@ ptInletVelocityFvPatchVectorField
 :
     fixedValueFvPatchField<vector>(p, iF, dict, false),
     direction_(dict.lookup("direction")),
-    model_name_(dict.lookup("model"))
+    model_name_(dict.get<word>("model")),
+    velocity_model_(torch::jit::load(model_name_))
 {
-    velocity_model_ = torch::jit::load(model_name_);
     if (dict.found("value"))
     {
         fvPatchField<vector>::operator=
@@ -145,7 +144,7 @@ void Foam::ptInletVelocityFvPatchVectorField::write(Ostream& os) const
 {
     fvPatchVectorField::write(os);
     os.writeEntry("direction", direction_);
-    os.writeEntry("model", model_name_);
+    os.writeEntry<word>("model", model_name_);
     writeEntry("value", os);
 }
 

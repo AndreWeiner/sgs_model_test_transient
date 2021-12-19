@@ -166,8 +166,6 @@ int main(int argc, char *argv[])
             }
         }
 
-        fvc::makeAbsolute(phi, U);
-
         fvScalarMatrix s1Eqn
         (
             fvm::ddt(s1) + fvm::div(phi, s1) - fvm::laplacian(D1, s1)
