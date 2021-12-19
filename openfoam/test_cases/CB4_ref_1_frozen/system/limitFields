@@ -6,7 +6,8 @@ limitFields
 
     // Mandatory entries (runtime modifiable)
     fields          (s1 s2 s3);
-    limit           max;
+    limit           both;
+    min             0;
     max             1;
     writeControl    writeTime;
     writeInterval   1;

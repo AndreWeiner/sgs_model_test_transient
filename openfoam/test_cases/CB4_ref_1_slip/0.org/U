@@ -37,7 +37,8 @@ boundaryField
     }
     bubble
     {
-	    type            slip;
+	type            freeSurfaceVelocity;
+	value           uniform (0 0 0);
     }
     "wedge_.*"
     {
