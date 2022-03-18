@@ -3,18 +3,29 @@
 
 ## Introduction
 
-This repository contains source code and documentation related to the research project
-
+This repository contains source code and documentation related to the research project:
 ```
 Assessment of a subgrid-scale model for convection-dominated mass transfer at rising bubbles during the initial transient rise
 ```
-This project is a collaborative effort between the [Multi-Scale Modeling of Multi-Phase Flows](https://www.tue.nl/en/research/research-groups/multi-scale-modelling-of-multi-phase-flows/) group at TU Eindhoven and the [Institute of Fluid Mechanics](https://www.tu-braunschweig.de/ism) at TU Braunschweig. The research project was planned and executed by **Irian Hierck**, **Claire Claassen**, **Hans Kuipers**, **Maike Balthussen**, all TU Eindhoven, and **Andre Weiner**, TU Braunschweig.
+This project is a collaborative effort between the [Multi-Scale Modeling of Multi-Phase Flows](https://www.tue.nl/en/research/research-groups/multi-scale-modelling-of-multi-phase-flows/) group at TU Eindhoven and the [Institute of Fluid Mechanics](https://www.tu-braunschweig.de/ism) at TU Braunschweig. The research project was planned and executed by **Irian Hierck**, **Claire Claassen**, **Hans Kuipers**, **Maike Balthussen**, all TU Eindhoven, and **Andre Weiner**, TU Braunschweig. A write-up of the results is published with open access at [https://doi.org/10.1002/aic.17641](https://doi.org/10.1002/aic.17641)
 
 Cite as:
 ```
-Andre Weiner, Claire Claassen, Irian Hierck, et al. Assessment of a subgrid-scale model for convection-dominated mass transfer for initial transient rise of a bubble. Authorea. September 25, 2021.
-
-DOI: 10.22541/au.163253713.32891661/v1
+Weiner, A, Claassen, CMY, Hierck, IR, Kuipers, JAM, Baltussen, MW. Assessment of a subgrid-scale model for convection-dominated mass transfer for initial transient rise of a bubble. AIChE J. 2022;e17641. doi:10.1002/aic.17641
+```
+```
+@article{https://doi.org/10.1002/aic.17641,
+author = {Weiner, Andre and Claassen, Claire M. Y. and Hierck, Irian R. and Kuipers, J. A. M. and Baltussen, Maike W.},
+title = {Assessment of a subgrid-scale model for convection-dominated mass transfer for initial transient rise of a bubble},
+journal = {AIChE Journal},
+volume = {n/a},
+number = {n/a},
+pages = {e17641},
+year = {2022},
+keywords = {high-Schmidt number problem, machine learning, mass transfer, multiphase flows, subgrid-scale modeling},
+doi = {https://doi.org/10.1002/aic.17641},
+url = {https://aiche.onlinelibrary.wiley.com/doi/abs/10.1002/aic.17641}
+}
 ```
 
 ## Acknowledgement
@@ -45,11 +56,15 @@ The repository is organized as follows:
 
 ## Data
 
-Raw simulation data, binary files, and visualizations are not stored on Github but have to be downloaded and extracted separately. If the data is not available via the links, please open an issue.
+Raw simulation data, binary files, and visualizations are not stored on Github but have to be downloaded and extracted separately. The final data are available at:
+```
+http://doi.org/10.23728/b2share.d58c8710010f415c88608aa1d3b172b3
+```
+The following archives are available:
 
-- *data* folder (~6.1GB): [link](https://cloudstorage.tu-braunschweig.de/getlink/fiJfFmo9H2M72ENvWXPgRt2J/data.tar.gz)
-- *output* folder (~52MB): [link](https://cloudstorage.tu-braunschweig.de/getlink/fiM8N7wSfWVzpvnxVwctDpr1/output.tar.gz)
-- *openfoam/run* folder (~2.1GB): [link](https://cloudstorage.tu-braunschweig.de/getlink/fi4F1PpKkMJUDWHxEBU4JqcU/run.tar.gz)
+- *data* folder (~6.1GB): [link](https://b2share.eudat.eu/api/files/ac50ab77-cd0c-4903-bf0c-a0f9aef03b3f/data.tar.gz)
+- *output* folder (~52MB): [link](https://b2share.eudat.eu/api/files/ac50ab77-cd0c-4903-bf0c-a0f9aef03b3f/output.tar.gz)
+- *openfoam/run* folder (~2.1GB): [link](https://b2share.eudat.eu/api/files/ac50ab77-cd0c-4903-bf0c-a0f9aef03b3f/run.tar.gz)
 
 Assuming that the *tar.gz* archives are located at the repository's top level, the data can be extracted as follows:
 ```
